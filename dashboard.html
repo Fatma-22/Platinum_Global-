@@ -1,0 +1,1025 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platinum Global Motors LLC</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a3a6c;
+            --secondary: #c5a47e;
+            --light: #f8f9fa;
+            --dark: #212529;
+            --gray: #6c757d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Cairo', 'Montserrat', sans-serif;
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: #fff;
+            min-height: 100vh;
+            position: relative;
+        }
+        
+        body[dir="rtl"] {
+            font-family: 'Cairo', sans-serif;
+        }
+        
+        body[dir="ltr"] {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .navbar-brand span {
+            color: var(--secondary);
+        }
+        
+        .nav-link {
+            font-weight: 600;
+            padding: 0.5rem 1rem !important;
+            color: var(--dark);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+        }
+        
+        .nav-link.active {
+            color: var(--primary);
+            position: relative;
+        }
+        
+        .nav-link.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 1rem;
+            right: 1rem;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .language-switcher {
+            display: flex;
+            align-items: center;
+            margin-left: 1rem;
+        }
+        
+        .lang-btn {
+            background: none;
+            border: none;
+            padding: 5px 10px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 4px;
+            color: var(--gray);
+        }
+        
+        .lang-btn.active {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+            padding: 0.5rem 1.5rem;
+            font-weight: 600;
+        }
+        
+        .btn-primary:hover {
+            background-color: #0f2a50;
+            border-color: #0f2a50;
+        }
+        
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128C7E;
+            color: white;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            color: white;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+        }
+        
+        .hero-title {
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            line-height: 1.3;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 3rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+        }
+        
+        .section-subtitle {
+            color: var(--gray);
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .info-item {
+            display: flex;
+            margin-bottom: 1rem;
+        }
+        
+        .info-icon {
+            color: var(--secondary);
+            font-size: 1.5rem;
+            min-width: 40px;
+            margin-top: 5px;
+        }
+        
+        /* Services */
+        .services {
+            background-color: #f8f9fa;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            height: 100%;
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-title {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--primary);
+        }
+        
+        /* Process */
+        .process-container {
+            position: relative;
+            padding-top: 3rem;
+        }
+        
+        .process-container::before {
+            content: '';
+            position: absolute;
+            top: 100px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background-color: var(--secondary);
+            z-index: 1;
+        }
+        
+        .process-step {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: 0 1.5rem;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 1.5rem;
+        }
+        
+        .step-title {
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .accordion-button {
+            font-weight: 600;
+            padding: 1.25rem;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(26, 58, 108, 0.05);
+            color: var(--primary);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+        }
+        
+        /* Contact */
+        .contact {
+            background-color: #f8f9fa;
+        }
+        
+        .contact-container {
+            display: flex;
+            gap: 3rem;
+        }
+        
+        .contact-form {
+            flex: 1;
+            background-color: white;
+            padding: 2.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .form-control, .form-select {
+            padding: 0.75rem 1rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid #e1e5eb;
+            border-radius: 8px;
+        }
+        
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(26, 58, 108, 0.25);
+        }
+        
+        .info-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 1.5rem;
+        }
+        
+        .info-card h5 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+        
+        .map-container {
+            height: 300px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 2rem;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary);
+            color: white;
+            padding: 3rem 0 1rem;
+        }
+        
+        .footer-logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: block;
+        }
+        
+        .footer-logo span {
+            color: var(--secondary);
+        }
+        
+        .footer-contact {
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-contact li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-social {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .footer-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-right: 5px;
+        }
+        
+        .copyright {
+            padding-top: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Responsive */
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .contact-container {
+                flex-direction: column;
+            }
+            
+            .process-container {
+                padding-top: 0;
+            }
+            
+            .process-container::before {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            section {
+                padding: 3rem 0;
+            }
+            
+            .hero {
+                min-height: 70vh;
+            }
+            
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body dir="rtl">
+    <!-- Header & Navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-white">
+            <div class="container">
+                <a class="navbar-brand" href="#">
+                    Platinum <span>Global Motors</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">الرئيسية</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#about">من نحن</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#services">خدماتنا</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#faq">الأسئلة الشائعة</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contact">تواصل معنا</a>
+                        </li>
+                    </ul>
+                    <div class="language-switcher">
+                        <button class="lang-btn active" data-lang="ar">العربية</button>
+                        <button class="lang-btn" data-lang="en">English</button>
+                    </div>
+                    <a href="https://wa.me/18654439823" class="btn btn-whatsapp ms-3">
+                        <i class="fab fa-whatsapp"></i> واتساب
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">بوابتك لشراء وتصدير السيارات والآلات من أمريكا إلى العالم</h1>
+                <p class="hero-subtitle">بسهولة، باحتراف، وأمان. نخدم عملاءنا في مختلف الدول عبر شبكة شحن دولية موثوقة وشركاء معتمدين.</p>
+                <div class="d-flex flex-wrap gap-3">
+                    <a href="#contact" class="btn btn-primary btn-lg">ابدأ الآن</a>
+                    <a href="#services" class="btn btn-outline-light btn-lg">استكشف خدماتنا</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">من نحن</h2>
+            <p class="section-subtitle">Platinum Global Motors LLC - امتداد عالمي من أمريكا إلى العالم</p>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <p class="lead">شركة أمريكية مسجلة ومرخصة ومعتمدة رسميًا، مقرها ولاية تينيسي - الولايات المتحدة الأمريكية، ومتخصصة في تصدير المركبات، الآلات، وقطع الغيار من أمريكا إلى الأسواق العالمية.</p>
+                    
+                    <div class="mt-5">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div>
+                                <h5>العنوان الرسمي</h5>
+                                <p>5923 KINGSTON PIKE #101, Knoxville, TN 37919-5074, United States</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h5>الهاتف</h5>
+                                <p>+1 (865) 443‑8923 (واتساب متاح)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h5>البريد الإلكتروني</h5>
+                                <p>contact@platinumglobalmotorsllc.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="عن الشركة">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">خدماتنا</h2>
+            <p class="section-subtitle">نوفر لك حلولاً شاملة لشراء وتصدير السيارات والآلات من أمريكا إلى مختلف دول العالم</p>
+            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="شراء السيارات">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">شراء السيارات من المزادات</h3>
+                            <p>نوفر لك شراء السيارات من جميع المزادات الأمريكية المعتمدة بأسعار تنافسية، عبر شبكة مزادات موثوقة تتيح خيارات واسعة وأسعار مناسبة.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1603739903239-8b6e64c3b185?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="الشحن الدولي">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">الشحن الدولي</h3>
+                            <p>الشحن الدولي من موانئ: ميامي، نيويورك، هيوستن، شيكاغو، سافانا، كاليفورنيا. مع خيارات الشحن المشترك (LCL) أو الحاوية الكاملة (FCL).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1542744095-291d1f67b221?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="التخزين المؤقت">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">التخزين المؤقت</h3>
+                            <p>نقدم خدمة التخزين المؤقت قبل الشحن، مع خيار الشحن المشترك (LCL) أو الحاوية الكاملة (FCL).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="الآلات والمعدات">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">تصدير الآلات والمعدات</h3>
+                            <p>نساعدك في شراء وتصدير الآلات والمعدات وقطع الغيار حسب متطلباتك الخاصة.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="المستندات">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">مستندات التصدير</h3>
+                            <p>تجهيز كافة مستندات التصدير: Title، Bill of Lading، Invoice.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-4">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="https://images.unsplash.com/photo-1560264281-0b4b1c3c201d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="الدعم">
+                        </div>
+                        <div class="service-content">
+                            <h3 class="service-title">الدعم والمتابعة</h3>
+                            <p>متابعة دقيقة لكل شحنة حتى التسليم. خبرة واسعة تضمن الحصول على أفضل الصفقات لك.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process">
+        <div class="container">
+            <h2 class="section-title">عملية التصدير</h2>
+            <p class="section-subtitle">رحلة سهلة وآمنة لشراء وتصدير السيارات والآلات من أمريكا إلى العالم</p>
+            
+            <div class="row process-container">
+                <div class="col-md-3 process-step">
+                    <div class="step-number">1</div>
+                    <h4 class="step-title">الشراء من المزادات</h4>
+                    <p>نشتري لك السيارات والآلات من المزادات الأمريكية المعتمدة بأسعار تنافسية.</p>
+                </div>
+                
+                <div class="col-md-3 process-step">
+                    <div class="step-number">2</div>
+                    <h4 class="step-title">التخزين والنقل الداخلي</h4>
+                    <p>نقل المركبات إلى المستودع وتخزينها مؤقتًا حتى موعد الشحن.</p>
+                </div>
+                
+                <div class="col-md-3 process-step">
+                    <div class="step-number">3</div>
+                    <h4 class="step-title">التجهيز والشحن</h4>
+                    <p>تجهيز المستندات وشحن المركبات من موانئنا المعتمدة.</p>
+                </div>
+                
+                <div class="col-md-3 process-step">
+                    <div class="step-number">4</div>
+                    <h4 class="step-title">التسليم والاستلام</h4>
+                    <p>تتبع الشحنة حتى وصولها إلى وجهتها وتسليمها لك.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <h2 class="section-title">الأسئلة الشائعة</h2>
+            <p class="section-subtitle">إجابات على أكثر الأسئلة شيوعًا من عملائنا</p>
+            
+            <div class="faq-container">
+                <div class="accordion" id="faqAccordion">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                هل يمكنني شراء أكثر من سيارة دفعة واحدة؟
+                            </button>
+                        </h2>
+                        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                نعم، ونوفر لك شحنًا مجمعًا لتقليل التكاليف.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                هل أحتاج إلى رخصة مزاد أمريكية؟
+                            </button>
+                        </h2>
+                        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                لا، نشتري بالنيابة عنك عبر تراخيصنا المعتمدة.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                هل يمكنني متابعة حالة السيارات؟
+                            </button>
+                        </h2>
+                        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                نعم، نوفر لك تحديثات دقيقة منذ الشراء وحتى الشحن.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                هل أستطيع الدفع من خارج أمريكا؟
+                            </button>
+                        </h2>
+                        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                نعم، نقبل التحويلات من عدة دول.
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                ما هي مدة الشحن؟
+                            </button>
+                        </h2>
+                        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                            <div class="accordion-body">
+                                عادة ما تستغرق 4 إلى 6 أسابيع من تاريخ تحميل الحاوية.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">تواصل معنا</h2>
+            <p class="section-subtitle">نحن هنا للإجابة على جميع استفساراتك وتقديم الدعم اللازم</p>
+            
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" placeholder="الاسم الكامل" required>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="email" class="form-control" placeholder="البريد الإلكتروني" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input type="tel" class="form-control" placeholder="رقم الهاتف">
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-select" required>
+                                    <option value="" selected disabled>الدولة</option>
+                                    <option>ليبيا</option>
+                                    <option>تركيا</option>
+                                    <option>الإمارات</option>
+                                    <option>تونس</option>
+                                    <option>مصر</option>
+                                    <option>الأردن</option>
+                                    <option>دول الخليج</option>
+                                </select>
+                            </div>
+                        </div>
+                        <textarea class="form-control" rows="5" placeholder="رسالتك" required></textarea>
+                        <button type="submit" class="btn btn-primary w-100">إرسال الرسالة</button>
+                    </form>
+                </div>
+                
+                <div class="contact-info">
+                    <div class="info-card">
+                        <h5><i class="fas fa-map-marker-alt"></i> العنوان</h5>
+                        <p>5923 KINGSTON PIKE #101, Knoxville, TN 37919-5074, United States</p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h5><i class="fas fa-phone-alt"></i> الهاتف</h5>
+                        <p>+1 (865) 443‑8923</p>
+                        <p class="mt-2"><strong>واتساب متاح</strong></p>
+                    </div>
+                    
+                    <div class="info-card">
+                        <h5><i class="fas fa-envelope"></i> البريد الإلكتروني</h5>
+                        <p>contact@platinumglobalmotorsllc.com</p>
+                    </div>
+                    
+                    <div class="map-container">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.841613402355!2d-83.9549508!3d35.9326963!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x885c17f7e5c6e5a5%3A0x3c8a7b3b1f3f3f3f!2s5923%20Kingston%20Pike%2C%20Knoxville%2C%20TN%2037919%2C%20USA!5e0!3m2!1sen!2sly!4v1686585000000!5m2!1sen!2sly" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <a href="#" class="footer-logo">Platinum <span>Global Motors</span></a>
+                    <p class="mb-4">امتداد عالمي من أمريكا إلى العالم. نقدم خدمات شراء وتصدير السيارات والآلات من أمريكا إلى الأسواق العالمية باحترافية وأمان.</p>
+                    
+                    <ul class="footer-contact list-unstyled">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>5923 KINGSTON PIKE #101, Knoxville, TN 37919-5074</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <span>+1 (865) 443‑8923</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <span>contact@platinumglobalmotorsllc.com</span>
+                        </li>
+                    </ul>
+                    
+                    <div class="footer-social">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://wa.me/18654439823" class="social-link">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-title">روابط سريعة</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">الرئيسية</a></li>
+                        <li><a href="#about">من نحن</a></li>
+                        <li><a href="#services">خدماتنا</a></li>
+                        <li><a href="#faq">الأسئلة الشائعة</a></li>
+                        <li><a href="#contact">تواصل معنا</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-title">الدول التي نخدمها</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">ليبيا</a></li>
+                        <li><a href="#">تركيا</a></li>
+                        <li><a href="#">الإمارات</a></li>
+                        <li><a href="#">تونس</a></li>
+                        <li><a href="#">مصر</a></li>
+                        <li><a href="#">الأردن</a></li>
+                        <li><a href="#">دول الخليج</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-3 col-md-4">
+                    <h5 class="footer-title">موانئ الشحن</h5>
+                    <ul class="footer-links list-unstyled">
+                        <li><a href="#">ميامي</a></li>
+                        <li><a href="#">نيويورك</a></li>
+                        <li><a href="#">هيوستن</a></li>
+                        <li><a href="#">شيكاغو</a></li>
+                        <li><a href="#">سافانا</a></li>
+                        <li><a href="#">كاليفورنيا</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>© 2025 Platinum Global Motors LLC - جميع الحقوق محفوظة</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Language switching functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const langButtons = document.querySelectorAll('.lang-btn');
+            
+            langButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    
+                    // Update button active state
+                    langButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Change page direction
+                    if(lang === 'ar') {
+                        document.body.dir = 'rtl';
+                        document.body.style.fontFamily = "'Cairo', sans-serif";
+                    } else {
+                        document.body.dir = 'ltr';
+                        document.body.style.fontFamily = "'Montserrat', sans-serif";
+                    }
+                    
+                    // In a real implementation, you would load the appropriate language content here
+                });
+            });
+            
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
